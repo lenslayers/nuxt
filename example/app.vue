@@ -1,12 +1,13 @@
 <template>
   <div>
     <BaseLogo />
-    <pre>{{ user }}</pre>
+    <pre @click="lens.increment()">{{ lens.count }}</pre>
+    <PageUser />
   </div>
 </template>
 
 <script lang="ts" setup>
-const { user } = useLens()
+const lens = useLens()
 
 onMounted(() => {
   console.log(':onMounted')

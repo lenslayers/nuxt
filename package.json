@@ -1,5 +1,7 @@
 {
-  "private": true,
+  "name": "lenslayers-nuxt",
+  "version": "0.0.1",
+  "private": false,
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
@@ -8,6 +10,13 @@
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
+    "@unocss/nuxt": "^0.47.5",
+    "@vueuse/core": "^9.6.0",
+    "@vueuse/nuxt": "^9.6.0",
     "nuxt": "3.0.0"
+  },
+  "dependencies": {
+    "@pinia/nuxt": "^0.4.3",
+    "pinia": "^2.0.23"
   }
 }
