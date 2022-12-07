@@ -1,7 +1,9 @@
 {
-  "name": "lenslayers-nuxt",
+  "name": "@lenslayers/nuxt-test",
   "version": "0.0.1",
   "private": false,
+  "type": "module",
+  "main": "./nuxt.config.ts",
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
@@ -18,5 +20,23 @@
   "dependencies": {
     "@pinia/nuxt": "^0.4.3",
     "pinia": "^2.0.23"
-  }
+  },
+  "description": "LensLayers Nuxt layer",
+  "directories": {
+    "example": "example"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lenslayers/nuxt.git"
+  },
+  "keywords": [
+    "lens",
+    "nuxt"
+  ],
+  "author": "j0hnfl0w",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lenslayers/nuxt/issues"
+  },
+  "homepage": "https://github.com/lenslayers/nuxt#readme"
 }

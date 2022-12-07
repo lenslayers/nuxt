@@ -3,6 +3,7 @@
     <BaseLogo />
     <pre @click="lens.increment()">{{ lens.count }}</pre>
     <PageUser />
+    <NuxtPage />
   </div>
 </template>
 
