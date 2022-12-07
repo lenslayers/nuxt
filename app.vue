@@ -8,18 +8,28 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="flex flex-col h-screen bg-red-300 w-full p-4 justify-start items-start content-start">
-    <span>LensLayers-Nuxt</span>
-    <span @click="lens.increment()">{{ lens.count }}</span>
-    <span>{{ x }}, {{ y }}</span>
+  <div class="flex flex-col w-full max-w-100vh p-2 justify-start items-start content-start">
+    <div class="flex flex-row w-full pb-2">
+      <NuxtLink to="/">@lenslayers/nuxt {{ x }}, {{ y }}</NuxtLink>
+    </div>
     <NuxtPage />
   </div>
 </template>
 
 <style>
-html,body {
-  padding: 0;
-  margin: 0;
+html,
+body,
+#__nuxt {
   min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  /* background: #191919; */
+  /* color: white; */
+  /* @apply font-sans; */
+}
+
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
 }
 </style>

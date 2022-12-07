@@ -1,4 +1,54 @@
+<script lang="ts" setup>
+const { data: { exploreProfiles } } = await $fetch('https://api.lens.dev', {
+  method: 'POST',
+  body: {
+    query: `
+query ExploreProfiles {
+  exploreProfiles(request: { sortCriteria: MOST_FOLLOWERS }) {
+    items {
+      id
+      name
+      bio
+      handle
+      picture {
+        ... on MediaSet {
+          original {
+            url
+          }
+        }
+      }
+      stats {
+        totalFollowers
+      }
+    }
+  }
+}`
+  },
+})
+
+function getPictureUrl(user: any) {
+  const url = user.picture?.original?.url
+  if (url && url.startsWith('ipfs://')) {
+    return `https://picsum.photos/seed/${user.id}/100`
+  }
+  else {
+    return url
+  }
+}
+</script>
+
 <template>
-  <div>Index page is shared?</div>
-  <NuxtLink to="/user">User</NuxtLink>
+  <div class="flex flex-col w-full max-w-600px gap-y-2">
+    <NuxtLink
+      v-for="(p,pi) in exploreProfiles.items" :key="pi"
+      :to="`/profile/${p.handle}`"
+      class="flex flex-row w-full items-center content-center"
+    >
+      <img :src="getPictureUrl(p)" class="rounded-full h-40px w-40px">
+      <div class="flex flex-col pl-2">
+        <span>{{ p.handle }}</span>
+        <small>{{ p.stats?.totalFollowers || 0 }}</small>
+      </div>
+    </NuxtLink>
+  </div>
 </template>
