@@ -1,6 +1,6 @@
 {
   "name": "@lenslayers/nuxt-test",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "private": false,
   "type": "module",
   "main": "./nuxt.config.ts",
@@ -12,14 +12,14 @@
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
-    "@unocss/nuxt": "^0.47.5",
-    "@vueuse/core": "^9.6.0",
-    "@vueuse/nuxt": "^9.6.0",
     "nuxt": "3.0.0"
   },
   "dependencies": {
     "@pinia/nuxt": "^0.4.3",
-    "pinia": "^2.0.23"
+    "pinia": "^2.0.23",
+    "@unocss/nuxt": "^0.47.5",
+    "@vueuse/core": "^9.6.0",
+    "@vueuse/nuxt": "^9.6.0"
   },
   "description": "LensLayers Nuxt layer",
   "directories": {
