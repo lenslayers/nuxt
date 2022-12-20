@@ -16,10 +16,12 @@
   },
   "dependencies": {
     "@pinia/nuxt": "^0.4.3",
-    "pinia": "^2.0.23",
     "@unocss/nuxt": "^0.47.5",
+    "@urql/vue": "^1.0.4",
     "@vueuse/core": "^9.6.0",
-    "@vueuse/nuxt": "^9.6.0"
+    "@vueuse/nuxt": "^9.6.0",
+    "graphql": "^16.6.0",
+    "pinia": "^2.0.23"
   },
   "description": "LensLayers Nuxt layer",
   "directories": {
@@ -38,5 +40,13 @@
   "bugs": {
     "url": "https://github.com/lenslayers/nuxt/issues"
   },
-  "homepage": "https://github.com/lenslayers/nuxt#readme"
+  "homepage": "https://github.com/lenslayers/nuxt#readme",
+  "graphql": {
+    "schema": "https://api.lens.dev",
+    "extensions": {
+      "languageService": {
+        "cacheSchemaFileForLookup": true
+      }
+    }
+  }
 }

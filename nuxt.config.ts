@@ -7,6 +7,7 @@ export default defineNuxtConfig({
     '@vueuse/nuxt',
   ],
   unocss: {
+    preflight: true,
     // presets
     uno: true, // enabled `@unocss/preset-uno`
     icons: true, // enabled `@unocss/preset-icons`

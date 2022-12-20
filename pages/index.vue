@@ -1,30 +1,27 @@
 <script lang="ts" setup>
-const { data: { exploreProfiles } } = await $fetch('https://api.lens.dev', {
-  method: 'POST',
-  body: {
-    query: `
-query ExploreProfiles {
-  exploreProfiles(request: { sortCriteria: MOST_FOLLOWERS }) {
-    items {
-      id
-      name
-      bio
-      handle
-      picture {
-        ... on MediaSet {
-          original {
-            url
+const lens = useLens()
+const { data: { exploreProfiles } } = await lens.query(`
+  query ExploreProfiles {
+    exploreProfiles(request: { sortCriteria: MOST_FOLLOWERS }) {
+      items {
+        id
+        name
+        bio
+        handle
+        picture {
+          ... on MediaSet {
+            original {
+              url
+            }
           }
         }
-      }
-      stats {
-        totalFollowers
+        stats {
+          totalFollowers
+        }
       }
     }
-  }
-}`
-  },
-})
+  }`
+)
 
 function getPictureUrl(user: any) {
   const url = user.picture?.original?.url
